@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:social_app/screens/home_screen.dart';
 import 'package:social_app/screens/login/login_screen.dart';
 import 'package:social_app/shared/components/constants.dart';
@@ -53,23 +54,29 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) => AppCubit()..getUserDate(),
       child: MaterialApp(
+        themeMode: ThemeMode.light,
         theme: ThemeData(
+          fontFamily: GoogleFonts.acme().fontFamily,
           primaryColor: primaryColor,
           primarySwatch: Colors.indigo,
           scaffoldBackgroundColor: Colors.white,
           appBarTheme:  AppBarTheme(
-            iconTheme: IconThemeData(
+            iconTheme: const IconThemeData(
               color: Colors.black
             ),
             backgroundColor: Colors.white,
             elevation: 0,
-            toolbarTextStyle: const TextStyle(
+            toolbarTextStyle:  TextStyle(
               color: Colors.black,
-              fontSize: 20
+              fontSize: 20,
+              fontFamily: GoogleFonts.aclonica().fontFamily,
+
             ),
-            titleTextStyle: const TextStyle(
+            titleTextStyle:  TextStyle(
                 color: Colors.black,
-                fontSize: 20
+                fontSize: 20,
+              fontFamily: GoogleFonts.aclonica().fontFamily,
+              fontWeight: FontWeight.w500
             ),
             actionsIconTheme: IconThemeData(
               color: primaryColor,
@@ -79,6 +86,20 @@ class MyApp extends StatelessWidget {
               statusBarIconBrightness: Brightness.dark
             )
           ),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: Colors.white,
+            elevation: 10,
+            selectedIconTheme: IconThemeData(
+              color: primaryColor,
+            ),
+            selectedItemColor: primaryColor,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            unselectedIconTheme: const IconThemeData(
+              color: Colors.grey
+            ),
+            type: BottomNavigationBarType.fixed
+          )
         ),
         debugShowCheckedModeBanner: false,
         home: startWidget,

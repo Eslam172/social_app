@@ -52,6 +52,9 @@ class RegisterCubit extends Cubit<RegisterStates> {
       name: name,
       phone: phone,
       uId: uId,
+      bio: 'write your bio ...',
+      image: 'https://img.freepik.com/free-photo/female-enterpreneur-businesswoman-being-disappointed-with-news-from-colleague-reads-message-smartphone-shocked-recieve-responsibility-prepare-difficult-project-tomorrow-s-meeting_273609-2441.jpg?t=st=1656284772~exp=1656285372~hmac=8bde927e8242a353a6f343fd0c07adccf18b2c87588d084d7547c11d5594e333&w=996',
+      cover: 'https://img.freepik.com/free-photo/european-woman-with-surprised-expression-dressed-yellow-casual-loose-jacket-pointing-with-index-finger-keeping-her-mouth-wide-open-being-shocked-with-what-she-sees-facial-expressions_273609-8067.jpg?t=st=1656287536~exp=1656288136~hmac=fa2d12a7a35b0fd893025b600712517448c793b1379ccd8403b9543ce3ab59be&w=996',
       isEmailVerified: false,
     );
     FirebaseFirestore.instance
