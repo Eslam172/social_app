@@ -27,6 +27,7 @@ void main()async {
 
    late Widget widget;
    uId = CacheHelper.getData(key: 'uId');
+   print(uId);
 
   if(uId != null){
     widget = const HomeScreen();

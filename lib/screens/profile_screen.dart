@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:social_app/screens/edit_profile_screen.dart';
+import 'package:social_app/shared/components/components.dart';
 import 'package:social_app/shared/cubit/cubit.dart';
 import 'package:social_app/shared/cubit/states.dart';
 import 'package:social_app/shared/styles/icon_broken.dart';
@@ -13,8 +15,8 @@ class ProfileScreen extends StatelessWidget {
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var cubit = AppCubit.get(context);
-        return Column(
+        var userModel = AppCubit.get(context).userModel;
+          return Column(
           children: [
             Container(
               height: 230,
@@ -32,7 +34,7 @@ class ProfileScreen extends StatelessWidget {
                         topRight: Radius.circular(4),
                       )),
                       child: Image(
-                        image: AssetImage('${cubit.user.cover}'),
+                        image: NetworkImage('${userModel!.cover}'),
                         width: double.infinity,
                         height: 180,
                         fit: BoxFit.cover,
@@ -44,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
                     backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                     child: CircleAvatar(
                       radius: 55,
-                      backgroundImage: NetworkImage('${cubit.user.image}'),
+                      backgroundImage: NetworkImage('${userModel.image}'),
                     ),
                   ),
                 ],
@@ -54,14 +56,14 @@ class ProfileScreen extends StatelessWidget {
               height: 10,
             ),
             Text(
-              '${cubit.user.name}',
+              '${userModel.name}',
               style: TextStyle(fontFamily: GoogleFonts.aclonica().fontFamily),
             ),
             const SizedBox(
               height: 10,
             ),
             Text(
-              '${cubit.user.bio}',
+              '${userModel.bio}',
               style: Theme.of(context).textTheme.caption,
             ),
             const SizedBox(
@@ -73,7 +75,9 @@ class ProfileScreen extends StatelessWidget {
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 12))
                 ),
-                  onPressed: () {},
+                  onPressed: () {
+                  navigateTo(context,  EditProfileScreen());
+                  },
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +94,9 @@ class ProfileScreen extends StatelessWidget {
                       )
                     ],
                   )),
-            )
+            ),
+            const SizedBox(height: 20,),
+            const Text('Your Content')
           ],
         );
       },

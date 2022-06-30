@@ -1,23 +1,23 @@
 class UserModel{
-  String? name;
-  String? email;
-  String? phone;
-  String? uId;
-  String? image;
-  String? cover;
-  String? bio;
-  bool? isEmailVerified;
+    String? name;
+    String? email;
+    String? phone;
+    String? uId;
+    String? image;
+    String? cover;
+    String? bio;
+    bool? isEmailVerified;
 
   UserModel(
   {
-    this.email,
-    this.name,
-    this.phone,
-    this.uId,
-    this.image,
-    this.cover,
-    this.bio,
-    this.isEmailVerified,
+      this.email,
+      this.name,
+      this.phone,
+      this.uId,
+      this.image,
+      this.cover,
+      this.bio,
+      this.isEmailVerified,
 }
       );
 

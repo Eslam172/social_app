@@ -47,7 +47,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
     required String phone,
     required String uId,
 }){
-    UserModel model = UserModel(
+    UserModel? model = UserModel(
       email: email,
       name: name,
       phone: phone,

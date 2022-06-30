@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:social_app/shared/styles/icon_broken.dart';
 
 Future<bool?> ShowSuccessToast(String msg) => Fluttertoast.showToast(
     msg: msg,
@@ -29,4 +30,19 @@ Future navigateAndFinish(context , Widget screen) => Navigator.pushAndRemoveUnti
 
 Future navigateTo(context , Widget screen) => Navigator.push(context,
     MaterialPageRoute(builder: (context) => screen),
+);
+
+PreferredSizeWidget defaultAppBar({
+    required context,
+    List<Widget>? actions,
+    String? text
+}) => AppBar(
+title: Text(text!),
+leading: IconButton(
+    onPressed: (){
+        Navigator.pop(context);
+    }, icon: const Icon(IconBroken.Arrow___Left_2),
+) ,
+actions: actions,
+titleSpacing: 5,
 );

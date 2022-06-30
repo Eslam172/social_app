@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                 label: 'Chat'
               ),
               BottomNavigationBarItem(
-                  icon: Icon(IconBroken.Add_User),
+                  icon: Icon(IconBroken.User1),
                 label: 'Users'
               ),
               BottomNavigationBarItem(

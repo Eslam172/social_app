@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/shared/components/components.dart';
 
 class AddPostScreen extends StatelessWidget{
   const AddPostScreen({Key? key}) : super(key: key);
@@ -6,9 +7,10 @@ class AddPostScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Add New Post'),
-        titleSpacing: 5,
+      appBar: defaultAppBar(
+          context: context,
+        text: 'Create Post',
+
       ),
     );
   }
